@@ -1,0 +1,42 @@
+Documentation - For updating dashboards
+
+Video instructions on updating files and dashboard can be viewed on this YouTube playlist.
+https://www.youtube.com/playlist?list=PLMJQTeJbJNe-luxgD52eh4TdQM6kgy-NL  
+
+The playlist contains three videos: updating the “MRA Master List.xls” the Tax Revenue file, and the Tableau Dashboard Story. Will likely add or update the videos after sharing them with MRA.
+
+Finding CPI data
+To get CPI data, visit - https://www.bls.gov/cpi/data.htm  
+
+1.	Pick All Urban Consumers (Current Series) 
+2.	Choose Top Picks, then U.S. city average, All items
+3.	Choose the years you want the CPI for
+4.	Check the box for  Annual Average 
+5.	Once you make those choices click the blue GO button. 
+6.	The table should update to download. Click the Download XLSX button to download the table as an Excel file. I used the annual average number.
+7.	The annual average can be added to the CPI tab of the Excel file.
+
+To calculate inflation, I used CPI data from the US Bureau of Labor and Statistics, U.S. city average, and All items - CUUR0000SA0 for Years 1978-2022 to help adjust dollar amounts to 2022 dollars. See Figure 28 below.
+
+
+ 
+Figure 28: Screenshot of Excel document for reference.
+MRA Tax Revenue “MRA Tax Revenue 1979-2022.xlsx”
+•	Column A - Year
+•	Column B - URD
+•	Column C - Tax revenue in real dollars
+•	Column D - Used vlookup to pull CPI  for the given year.
+o	=VLOOKUP(A2:A119,CPI!$A$2:$B$47,2,FALSE)
+•	Column E - Tax revenue in 2022 dollars
+o	=(CPI Now / CPI Then) * Old value 
+o	=(D15/D2)*C2
+Finding GPS coordinates Without Python
+Visit https://www.gps-coordinates.net/ and enter the property address where you wish to find the GPS Coordinates.
+
+GPS coordinates can also be found in the URL bar when using Google Maps.
+•	Enter the address of the property.
+•	Please make sure that it is selected with the red marker.
+•	Then look in the URL bar (see selected text in blue)
+•	Those values can be copy/pasted into the Lat and Long columns in the “MRA Master List.xls.”
+ 
+
